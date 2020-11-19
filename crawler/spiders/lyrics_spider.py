@@ -35,9 +35,6 @@ class MetroLyricsSpider(CrawlSpider):
             item['title'] = titles.xpath('a/text()').extract()
             item['link'] = titles.xpath('a/@href').extract()
             items.append(item)
-
-    def save_url(self,response):
-        open('urls_metrolyrics_'+date+'.txt','a').write(response.url+'\n')
         
     def save_lyrics(self,response):
         url = response.url
