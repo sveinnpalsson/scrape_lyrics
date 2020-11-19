@@ -8,3 +8,9 @@ The dataset could then be used for some fun projects.
 1. [Install scrapy](https://docs.scrapy.org/en/latest/intro/install.html) e.g. by doing `conda install -c conda-forge scrapy`
 2. In the root directory of this repo do `scrapy crawl lyrics`
 3. Have fun with the dataset
+
+
+#### Output file:
+The output is stored in lyrics.txt in the following format:
+
+`'#beginentry\n' + url + '\n' + artist + '\n' + song + '\n\n' + song_text + '\n\n'`
