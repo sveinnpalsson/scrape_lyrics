@@ -50,8 +50,13 @@ class MetroLyricsSpider(CrawlSpider):
         song = header.split('by')[0].strip()
         artist = header.split('by')[1].strip()
         song_text = '\n\n'.join(verses)
-        with open(filename,'a') as f:
-            f.write('#beginentry \n'+url+'\n'+artist+'\n'+song+'\n'+song_text+'\n\n')
-        print('---- Saved lyrics %s by %s ----' % (song,artist))
+        try:
+            with open(filename,'a') as f:
+                f.write('#beginentry \n'+url+'\n'+artist+'\n'+song+'\n'+song_text+'\n\n')
+            print('---- Saved lyrics %s by %s ----' % (song,artist))
+        except Exception as e:
+            print("Unexpected error:", str(e))
+
+
 
         
