@@ -3,12 +3,10 @@ from scrapy.linkextractors import LinkExtractor
 from crawler.items import CrawlerItem
 from scrapy import Selector
 import os
-from datetime import datetime as dt
 import urllib
 import urllib.request
 from lxml.html import fromstring
 
-date = str(dt.now().date())
 filename = 'lyrics.txt'
 
 class MetroLyricsSpider(CrawlSpider):
